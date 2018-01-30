@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestSpringBoot</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        function getData() {
+            $.post("/webDemo-1.0-SNAPSHOT/hello", function(data) {
+                alert(data);
+            });
+
+//            $.ajax({
+//                type: 'POST',
+//                url: "/webDemo-1.0-SNAPSHOT/hello",
+//                success: function (data) {
+//                    alert(data);
+//                },
+//                dataType: jsonp
+//            });
+        }
+    </script>
+</head>
+<body>
+<h1>哈哈哈我是谁？</h1>
+
+<button onclick="getData()">点击获取数据</button>
+</body>
+</html>

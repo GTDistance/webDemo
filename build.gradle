@@ -1,0 +1,24 @@
+group 'com.thomas'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()//依赖Maven仓库
+    }
+    dependencies {
+        //使用1.4.2.RELEASE版本的Spring框架
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
