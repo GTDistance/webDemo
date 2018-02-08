@@ -4,9 +4,12 @@ package com.thomas.webdemo.controller;
 //表明这是一个 Controller
 //@Controller
 
+import com.thomas.webdemo.bean.HelloBean;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 //RestController是一种Rest风格的Controller，可以直接返回对象而不返回视图，返回的对象可以使JSON，XML等
 @RestController
@@ -21,6 +24,13 @@ public class SpringController {
     public String hello() {
 
         return "Hello World!";//返回结果为字符串
+    }
+
+
+    @RequestMapping("/helloBean")
+    public HelloBean getHelloBean(@RequestBody HelloBean helloBean){
+        System.out.println(helloBean.toString());
+        return helloBean;
     }
 
 

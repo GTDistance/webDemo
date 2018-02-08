@@ -11,14 +11,21 @@
                 alert(data);
             });
 
-//            $.ajax({
-//                type: 'POST',
-//                url: "/webDemo-1.0-SNAPSHOT/hello",
-//                success: function (data) {
-//                    alert(data);
-//                },
-//                dataType: jsonp
-//            });
+        }
+        function getHelloBean() {
+            $.ajax({
+                type : "post",
+                dataType : "json",
+                url : "/webDemo-1.0-SNAPSHOT/helloBean",
+                contentType:"application/json",
+                data:JSON.stringify({
+                    name:'thomas',
+                    age:'10'
+                }),
+                success : function(result) {
+                    alert(result);
+                }
+            });
         }
     </script>
 </head>
@@ -26,5 +33,6 @@
 <h1>哈哈哈我是谁？</h1>
 
 <button onclick="getData()">点击获取数据</button>
+<button onclick="getHelloBean()">点击获取HelloBean</button>
 </body>
 </html>
